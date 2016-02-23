@@ -1,0 +1,1 @@
+"use strict";new Jotted(document.querySelector("#editor"),{files:[{type:"html",url:"example.html"}],pane:"html",plugins:["codemirror"]});

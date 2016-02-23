@@ -1,0 +1,12 @@
+<!DOCTYPE html><html><head><title>liBrain</title></head><body><h1>Welcome to liBrain</h1><div>[pretend this is a search for "fred" on Calisphere]</div><div data-librain='{"q":"fred", "provider.name": "-California+Digital+Library"}'></div><script data-librain-template="cards" type="text/x-handlebars-template"><div>
+  <h2>Related items from the Digital Public Library of America</h2>
+  {{#each docs}}
+  <div>
+    <a href="{{this.isShownAt}}">
+      <div><img src="{{ this.object }}"></div>
+      <div>{{ this.sourceResource.title }}</div>
+    </a>
+    <div>{{ this.dataProvider }}</div>
+  </div>
+  {{/each}}
+</div></script><script src="//tingletech.github.io/liBrain/bundle.js"></script></body></html>
