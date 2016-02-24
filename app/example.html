@@ -2,6 +2,13 @@
 <html>
 <head>
   <title>liBrain</title>
+  <style>
+.thumbnail { width: 200px; height: 200px; overflow: hidden; }
+.thumbnail img { width: 100%; }
+.deck { width:100%; margin:0 auto; text-align:center; }
+.card { display: inline-block; height: 250px; width: 200px; margin:10px; }
+.ellipsis { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  </style>
 </head>
 <body>
   <h1>Welcome to liBrain</h1>
@@ -9,16 +16,20 @@
   <div data-librain='{"q":"fred", "provider.name": "-California+Digital+Library"}'></div>
   <script data-librain-template='cards' type="text/x-handlebars-template">
 <div>
-  <h2>Related items from the Digital Public Library of America</h2>
+  <h2>Related content from other Digital Public Library of America contributors</h2>
+  <div class="deck">
   {{#each docs}}
-  <div>
+  {{#if this.object}}
+  <div class="card">
     <a href="{{this.isShownAt}}">
-      <div><img src="{{ this.object }}"></div>
-      <div>{{ this.sourceResource.title }}</div>
+      <div class="ellipsis">{{ this.sourceResource.title }}</div>
+      <div class="thumbnail"><img src="{{ this.object }}"></div>
     </a>
-    <div>{{ this.dataProvider }}</div>
+    <div class="ellipsis">{{ this.provider.name }}</div>
   </div>
+  {{/if}}
   {{/each}}
+  </div>
 </div>
   </script>
   <script src="//tingletech.github.io/liBrain/bundle.js"></script>

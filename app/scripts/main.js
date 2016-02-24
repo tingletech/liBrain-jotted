@@ -5,7 +5,7 @@ new Jotted(document.querySelector('#editor'), {
     type: 'html',
     url: 'example.html'
   }],
-  pane: 'html',
+  // pane: 'html',
   plugins: [
     'codemirror'
   ]
